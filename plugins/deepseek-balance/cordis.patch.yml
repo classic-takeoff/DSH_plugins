@@ -1,0 +1,12 @@
+# @deepseek-ai/dsh-deepseek-balance bundle patch: mount the DeepSeek balance
+# host service (credentials seam + official GET /user/balance) and its web
+# surfaces. One insert row mounts both halves: the node half registers the
+# `deepseekBalance` Remote namespace, the `deepseek-balance` settings section,
+# and the credential read; the browser half is served automatically for any
+# enabled Loader entry declaring `dsh.client`.
+#
+# Install into a profile with:
+#   dsh plugin --profile web add @deepseek-ai/dsh-deepseek-balance
+- insert:
+    - id: deepseek-balance
+      name: '@deepseek-ai/dsh-deepseek-balance'
